@@ -34,7 +34,6 @@ CREATE TABLE ImageUploaded(
 ImageID int identity(1,1) primary key,
 ImageName nvarchar(200),
 ImageDescription nvarchar(500),
-ImageTag nvarchar(200),
 ImageSize float,
 ImagePath nvarchar(200),
 ImageDate datetime,
