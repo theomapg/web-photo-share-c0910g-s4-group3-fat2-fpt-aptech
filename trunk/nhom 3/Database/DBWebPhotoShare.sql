@@ -52,8 +52,8 @@ CommentDate datetime
 )
 CREATE TABLE FeedBack(
 FeedBackID int identity(1,1) primary key,
-FeedBack nvarchar(200),
-FeedBackStatus bit,
+FeedBackTitle nvarchar(500),
+FeedBack nvarchar(max),
 FeedBackDate datetime,
 email nvarchar(200)
 )
