@@ -2,9 +2,10 @@ USE DBphotoshare
 --login
 CREATE PROCEDURE SP_LOGIN
 @emailID nvarchar(200),
-@passwords nvarchar(200)
+@passwords nvarchar(200),
+@roldeID int
 AS
-	SELECT * FROM dbo.Acount WHERE emailID=@emailID and passwords=@passwords
+	SELECT * FROM dbo.Acount WHERE emailID=@emailID and passwords=@passwords and roldeid=@roldeID
 
 --register
 CREATE PROCEDURE SP_REGISTER
@@ -15,7 +16,7 @@ CREATE PROCEDURE SP_REGISTER
 @fullname nvarchar(200),
 @roleid int
 AS
-	INSERT INTO dbo.Acount VALUES(@emailID,@passwords,@gender,@birthday,@fullname,@status,GETDATE(),0)
+	INSERT INTO dbo.Acount VALUES(@emailID,@passwords,@gender,@birthday,@fullname,@status,GETDATE(),@roleid)
 	
 	
 ----Update acount infomation
