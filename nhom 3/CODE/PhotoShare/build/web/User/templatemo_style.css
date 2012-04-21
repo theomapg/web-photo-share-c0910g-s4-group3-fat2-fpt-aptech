@@ -385,6 +385,7 @@ h3 {
 	border-bottom: 1px dotted #666;
 	padding-bottom: 20px;
 	margin-bottom: 20px;
+        min-height:600px; 
 }
 
 .product_box {
@@ -466,5 +467,15 @@ h3 {
 
 .footer_menu .last_menu {
 	border: none;
+}
+#form1 {
+    
+    float: left;
+    margin: 13px 0;
+    padding: 15px 22px 15px 24px;
+    position: absolute;
+    width: 600px;
+    
+    
 }
 /* end of footer */
