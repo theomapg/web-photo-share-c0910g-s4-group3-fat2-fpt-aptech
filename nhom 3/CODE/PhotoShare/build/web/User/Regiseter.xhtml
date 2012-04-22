@@ -12,32 +12,41 @@
 
             <ui:define name="content">
                 <br></br>
-                <div id="">
-                    <p:panel header="Register">
-                        <h:panelGrid cellpadding="5" columns="2">
-                            <h:outputLabel value="Email :"/>
-                            <p:inputText id="input"  rendered="true"/>
-                            <h:outputLabel for="pwd1" value="Password : " />  
-                            <p:password id="pwd1"  match="pwd2" label="Password :" required="true" feedback="true" minLength="6" maxlength="50"/>  
 
-                            <h:outputLabel for="pwd2" value="RePassword : " />  
-                            <p:password id="pwd2" label="Password 2" required="true" feedback="true" minLength="6" maxlength="50"/>  
-                            <h:outputLabel value="Gender :"/>
-                            <h:selectOneMenu >
-                                <f:selectItem itemLabel="Male"></f:selectItem>
-                                <f:selectItem itemLabel ="Female"></f:selectItem>
-                            </h:selectOneMenu>
-                            <h:outputLabel value="Birthday"/>
-                            <p:calendar id="bithday" maxdate="12/31/1999"/>
-                            <h:outputLabel value="FullName :"/>
-                            <p:inputText id="fullName" maxlength="200"/>
-                          
-                           
+                <h:form id="form">
+                <p:panel header="Register" id="panel">
+                    <p:messages id="msg"/>  
+                    <h:panelGrid>
+                            <h:panelGrid cellpadding="5" columns="2">
+                                <h:outputLabel value="Email :"></h:outputLabel>
+                                <p:inputText id="email" required="true" feedback="true" maxlength="200" label="email">
+                                    <f:validateLength minimum="10"/>
+                                    <f:validateRegex  pattern="^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$" for="email"/>
+                                </p:inputText>
+                                <h:outputLabel for="pwd1" value="Password : "></h:outputLabel>  
+                                <p:password id="pwd1"  match="pwd2" label="Password :" required="true" feedback="true" minLength="6" maxlength="50"></p:password>  
+
+                                <h:outputLabel for="pwd2" value="RePassword : "></h:outputLabel>  
+                                <p:password id="pwd2" label="RePassword" required="true" feedback="true" minLength="6" maxlength="50"></p:password>  
+                                <h:outputLabel value="Gender :"></h:outputLabel>
+                                <h:selectOneMenu >
+                                    <f:selectItem itemLabel="Male"/>
+                                    <f:selectItem itemLabel ="Female"/>
+                                </h:selectOneMenu>
+                                <h:outputLabel value="Birthday"/>
+                                <p:calendar id="bithday" maxdate="12/31/1999"></p:calendar>
+                                <h:outputLabel value="FullName :"></h:outputLabel>
+                                <p:inputText id="fullName" maxlength="200" required="true" label="fullname"></p:inputText>
+                               
+                            </h:panelGrid>
                         </h:panelGrid>
-                         <p:commandButton value="Register" type="submit" />
-                         <p:commandButton value="reset" type="reset"/>
+                          <br></br>
+                  
+                    <p:commandButton value="Register"  update="panel" ajax="true" label="Register"  action="#{acountBean.registerAction(actionEvent)}"/>&nbsp;  
+                    <p:commandButton value="reset" ajax="true" label="reset" type="reset"/>
+                 
                     </p:panel>
-                </div>
+                       </h:form>
             </ui:define>
 
         </ui:composition>
