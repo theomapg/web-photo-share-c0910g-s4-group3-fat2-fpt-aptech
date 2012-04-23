@@ -27,7 +27,8 @@ emailID nvarchar(200) not null
 )
 CREATE TABLE Category(
 CategoryID int identity(1,1) primary key,
-CategoryName nvarchar(200)
+CategoryName nvarchar(200),
+CategoryDescription nvarchar(500)
 )
 
 CREATE TABLE ImageUploaded(
