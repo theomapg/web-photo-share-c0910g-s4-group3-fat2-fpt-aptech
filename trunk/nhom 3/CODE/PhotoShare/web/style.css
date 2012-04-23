@@ -91,7 +91,7 @@ padding-right:20px;
 .main_content{
 margin:0 auto;
 width:900px;
-height:auto;
+min-height:500px;
 padding:0px 0 50px 0;
 background:url(images/menu_bg.jpg) no-repeat center top #fff;
 }
